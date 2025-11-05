@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="./js/main.js" defer></script>
+    <!--<script src="./js/main.js" defer></script>-->
     <title>Document</title>
 </head>
 <body>
@@ -80,5 +80,50 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+          let contenedorProductos = document.getElementById("contenedorProducto");
+        const url = "http://localhost:3000/productos"; // Guardamos en una variable la url de nuestro endpoint
+
+        async function obtenerProductos() {
+            try {
+                let respuesta = await fetch(url); // Hacemos una peticion a nuestro nuevo endpoint en http://localhost:3000/products
+
+                let data = await respuesta.json();
+
+                console.log(data); // Nuestros productos estan disponibles dentro de payload { payload: Array(19) }
+
+                let productos = data.payload; 
+
+                mostrarProductos(productos);
+
+            } catch(error) {
+                console.error(error);
+            }
+        }
+        function mostrarProductos(array) {
+            console.table(array); // Recibimos correctamente en formato tabla los productos que nos manda la funcion obtenerProductos()
+
+            let htmlProducto = "";
+
+            array.forEach(producto => {
+                htmlProducto += `
+                    <div class="card-producto">
+                        <img src="${producto.img_url}" alt="${producto.nombre_producto}">
+                        <h5>${producto.nombre_producto}</h5>
+                        <p>Id: ${producto.id}</p>
+                        <p>$${producto.precio}</p>
+                    </div>
+                `;
+            });
+
+            contenedorProductos.innerHTML = htmlProducto;
+        }
+
+        function init() {
+            obtenerProductos()
+        }
+
+        init();
+    </script>
 </body>
 </html>
