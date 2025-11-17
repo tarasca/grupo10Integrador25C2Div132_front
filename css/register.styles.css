@@ -1,3 +1,9 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 header{
     display: flex;
     flex-direction: column;
@@ -8,4 +14,8 @@ main{
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+ul{
+    list-style-type: lower-greek;
 }

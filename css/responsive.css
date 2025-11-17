@@ -1,0 +1,85 @@
+/* origen: google
+ * RESPONSIVE.CSS
+ * Mobile-first responsive breakpoints
+ * Compatible con la mayoría de dispositivos modernos
+ */
+
+/* ==================================================
+   BASE: Extra Small (XS) – Teléfonos pequeños
+   ≤ 575px
+   ================================================== */
+
+/* Todo tu estilo base va AQUÍ (móvil por defecto) */
+/* Ejemplo:
+body {
+  font-size: 14px;
+  padding: 8px;
+}
+*/
+
+
+/* ==================================================
+   SMALL (SM) – Teléfonos grandes / Tablets en portrait
+   ≥ 576px
+   ================================================== */
+@media only screen and (min-width: 576px) {
+  /* Ejemplo:
+  body {
+    font-size: 15px;
+    padding: 12px;
+  }
+  */
+}
+
+
+/* ==================================================
+   MEDIUM (MD) – Tablets en landscape
+   ≥ 768px
+   ================================================== */
+@media only screen and (min-width: 768px) {
+  /* Ejemplo:
+  .container {
+    max-width: 720px;
+  }
+  */
+}
+
+
+/* ==================================================
+   LARGE (LG) – Laptops y desktops pequeños
+   ≥ 992px
+   ================================================== */
+@media only screen and (min-width: 992px) {
+  /* Ejemplo:
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  */
+}
+
+
+/* ==================================================
+   EXTRA LARGE (XL) – Desktops estándar
+   ≥ 1200px
+   ================================================== */
+@media only screen and (min-width: 1200px) {
+  /* Ejemplo:
+  .container {
+    max-width: 1140px;
+  }
+  */
+}
+
+
+/* ==================================================
+   EXTRA EXTRA LARGE (XXL) – Pantallas grandes / 4K
+   ≥ 1400px
+   ================================================== */
+@media only screen and (min-width: 1400px) {
+  /* Ejemplo:
+  body {
+    font-size: 18px;
+  }
+  */
+}

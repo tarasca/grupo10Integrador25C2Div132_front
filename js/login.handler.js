@@ -22,10 +22,13 @@ const errorMsj = {
 };
 
 const setDeco = async (range) => {
-    let h2 = document.getElementById('deco');
-    for(let i = 0; i < range; i++){
-        h2.innerText += '꒷꒦︶꒷꒦︶ ๋ ࣭ ⭑꒷꒦'; 
-    }
+    let adornos = document.querySelectorAll('h3');
+    adornos.forEach( detalle => {
+        for(let i = 0; i < range; i++){
+            detalle.innerText += '꒷꒦︶꒷꒦︶ ๋ ࣭ ⭑꒷꒦'; 
+        }
+    })
+    
 }
 
 const loginUser = async (event) => {

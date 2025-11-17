@@ -7,28 +7,51 @@ const productos= [
     {id:6,nombre:"multifilamento power pro",precio:120000, rutaImg:"https://www.devotocamping.com.ar/cache_images/d/7/f/9/4/d7f94d65e7c0a8fcc51d967d3c970cf9adc23c4c--.jpg"},
     {id:7,nombre:"señuelo rapala",precio:60000, rutaImg:"https://acdn-us.mitiendanube.com/stores/005/733/648/products/73-3541292ea09053404917398204050962-1024-1024.jpg"}
 ];
-let contenedorProducto= document.querySelector("#contenedorProducto");
+//let contenedorProducto= document.querySelector("#contenedorProducto");
 let barraBusqueda = document.querySelector("#barraBusqueda");
 let contenedorCarrito= document.querySelector("#carrito");
 let carrito =[];
+let contenedorProductos = document.getElementById("contenedorProducto");
+ const url = "http://localhost:3000/productos";
+
+console.log("holaaaaaaaaaaaa")
+async function obtenerProductos() {
+    try {
+        let respuesta = await fetch(url); // Hacemos una peticion a nuestro nuevo endpoint en http://localhost:3000/productos
+        console.log("holaaaaaaaaa");
+        let data = await respuesta.json();
+
+        console.log(data); 
+
+        let productos = data.payload; 
+
+        mostrarProductos(productos);
+
+    } catch(error) {
+        console.error(error);
+    }
+}
+        
 // Mostramos los productos que se encutra en le array
 function mostrarProductos(array){
     let cartaProducto= "";
     array.forEach(element => {
-        cartaProducto += `<div class="card-producto">
-                <img src="${element.rutaImg}" alt="${element.nombre}">
-                <h3>${element.nombre}</h3>
-                <p>$${element.precio}</p>
-                <button onclick = "agregarACarrito(${element.id})">Agregar al carrito</button>
-            </div> `;
+        cartaProducto += `
+        <div class="card-producto">
+            <img src="${producto.img_url}" alt="${producto.nombre_producto}">
+            <h5>${producto.nombre_producto}</h5>
+            <p>Id: ${producto.id}</p>
+            <p>$${producto.precio}</p>
+        </div> `;
     });
-    contenedorProducto.innerHTML = cartaProducto;
+    contenedorProductos.innerHTML = cartaProducto;
 }
 // Inicializamo el mostrar productos y mostrar carrito
 function init(){
     // tenemos que leer el almacenamiento local antes de mostrarCarrito(), sino  entra al else de mostrar carrito y me borra la memoria
+
     cargarCarrito();
-    mostrarProductos(productos);
+   obtenerProductos();
     mostrarCarrito();
 }
 

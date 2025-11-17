@@ -92,7 +92,9 @@ carrito
     background-color:#c4c4c4 ;
 }
 .contenedor-carrito{
+   
     display: none;
+   
 }
 .contenedor-carrito div{
     height: 40px;
@@ -110,13 +112,13 @@ carrito
     position: fixed;
     align-items: center;
     right: 0;
-    top: 0;
+    top:0;
     flex-wrap: wrap;
     flex-direction: row;
     background-color: white;
     border: 2px solid  #3333331A;
-    width: 45%;
-    height: max-content; 
+    width: 40%;
+    height: 100%; 
     color: black;
 }
 
@@ -128,13 +130,12 @@ carrito
 }
 #carrito ul{
     
-    width: fit-content;
-    height: fit-content;
+    width: 90%;
     display: flex;
-    margin: 5px auto;
+    margin: 0 auto;
     justify-content: center;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0;
     gap: 5px;
 }
@@ -151,12 +152,12 @@ carrito
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .bloque-carrito div{
-    margin: 5px;
-    display: flex;
-    height: 100%;
-    justify-content: flex-start;
-    gap: 5px;
-    align-items: center;
+        margin: 0;
+        display: flex;
+        height: 100%;
+        justify-content: flex-start;
+        gap: 5px;
+        align-items: center;
         
 }
 .bloque-carrito img{
@@ -166,14 +167,12 @@ carrito
 .vacio{
     padding: 50px;
     margin:  auto;
-    font-size: small;
 }
 /*===========================================================================================================
 tarjetas productos
 ============================================================================================================*/
 /**/
 .card-producto{
-    margin: 5px;
     display: flex;
     height: 300px;
     width: 200px;
@@ -183,17 +182,15 @@ tarjetas productos
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
 #contenedorProducto{
-    margin:5px auto;
-    padding: 3px;
     display: flex;
     flex-wrap: wrap;
      gap: 20px;
-    border: 2px solid turquoise;
+    /*border: 2px solid turquoise;*/
     justify-content: space-around;
-    width: 95%;
-    height: fit-content;
-    margin-top:10px; 
+    height: 700px;
+    margin-top:20px; 
     
 
 }
@@ -202,3 +199,46 @@ tarjetas productos
     width: 100px;
     height: 120px;
 }
+/*============================================
+FORMULARIO
+=========================================*/
+.contenedor-form{
+    margin:auto;
+    margin-top: 30px;
+    width: 50%;
+    min-height: 400px;
+    max-height: 900px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 5px;
+}
+.products-form{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 5px;
+}
+.contenedor-input{
+    display: flex;  
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+
+}
+.li-listados .img-listados{
+    width: 70px;
+    height: 50px;
+}
+.li-listados{
+
+    width: 75%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+/* .contenedor-input .submit{
+} */
