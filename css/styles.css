@@ -18,6 +18,7 @@ body{margin :0
     display: flex;
     margin: auto;
     align-items: center;
+    justify-content: space-between;
 }
 .logo{
     width: 33.33%;
@@ -92,9 +93,7 @@ carrito
     background-color:#c4c4c4 ;
 }
 .contenedor-carrito{
-   
     display: none;
-   
 }
 .contenedor-carrito div{
     height: 40px;
@@ -141,7 +140,10 @@ display: none;
     background-color: white;
     border: 2px solid  #3333331A;
     width: 40%;
-    height: 100%; 
+    height: 100%;
+
+
+    overflow: auto;
     color: black;
 }
 
