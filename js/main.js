@@ -307,7 +307,7 @@ async function registrarVenta(Total, idProductos) {
     alert(result.message);
 
     sessionStorage.removeItem("nombreUsuario");
-
+    vaciarCarrito();
     window.location.href = "index.html";
   } else {
     alert(result.message);
