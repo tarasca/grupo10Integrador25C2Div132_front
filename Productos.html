@@ -6,7 +6,8 @@
     <meta name="author" content="ALEX ZALAZAR , SANTIAGO BASSO">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="https://acdn-us.mitiendanube.com/stores/006/296/350/themes/common/logo-1444518768-1748714067-c86f57064af934abbc8cf8f22bf870571748714067-480-0.webp">
-    <title>REEL DE PESCA</title>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <title>Document</title>
 </head>
 <body>
     <header>
@@ -27,10 +28,8 @@
                     <div class="registro">
                         <ion-icon name="person-outline"></ion-icon>
                         <div>
-                            <h6>¡Hola! inicia seccion</h6>
-                            <!-- <a href="#" class="crear-cuenta">
-                                <p>O puedes registrarte</p>
-                            </a> -->
+                            <h6>Bienvenido!</h6>
+                            <div id="contenedor-name"></div>
                         </div>
                         
                     </div>
@@ -54,21 +53,15 @@
         <div class="header-two">
             <div class="header-nav">
                 <nav class="navegacion">
-                    <a href="indexCliente.html"><p>INICIO</p></a>
+                    <a href="#" onclick="quitarFiltros()"><p>INICIO</p></a>
                 </nav>
                 <nav class=" navegacion">
-                    <a href="#"><p>CATEGORIA</p>
+                    <a href="#" onclick="filtrarCategoria('REEL')"><p>REEL</p>
                     </a>
-                    <div class="contenedor-categoria">
-                        <nav class="navegacion navegacion-categoria">
-                            <a href="cañaCliente.html"><p>CAÑA</p></a>
-                        </nav>
-                        <nav class="navegacion navegacion-categoria">
-                            <a href="#"><p>REEL</p></a>
-                        </nav>
-                        
-                    </div>
-                
+                </nav>
+                <nav class=" navegacion">
+                    <a href="#" onclick="filtrarCategoria('VARA')"><p>CAÑA DE PESCA</p>
+                    </a>
                 </nav>
             </div>
         </div>
@@ -76,12 +69,21 @@
           
     </header>
        <main>
+        <div id="contonedorBTN"></div>
         <section id="contenedorProducto"></section>
     </main>
         <footer class="autores">
         <H3>SANTIAGO BASSO</H3>
         <H3>ALEX ZALAZAR</H3>
     </footer>
+    <script src="./js/main.js"></script>
+        
+
+
+
+
+
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

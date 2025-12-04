@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/styles.css">
+    <title>Login</title>
+     <link rel="icon" href="https://acdn-us.mitiendanube.com/stores/006/296/350/themes/common/logo-1444518768-1748714067-c86f57064af934abbc8cf8f22bf870571748714067-480-0.webp">
+</head>
+
+<body>
+    <main class="contenedor-form">    
+        
+         
+            <form class="products-form" id="loginForm">
+                
+                
+                 <h1>Bienvenido!</h1>
+                <div class="contenedor-input">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="ingrese su nombre" required>
+                   
+                </div>
+            
+              
+                    
+                <div class="contenedor-input">
+                    <input class="btn-enviar" type="submit" value="Enviar">
+                   
+                </div>
+               
+            </form>
+        
+    </main>
+    <script>
+      
+        let formBienvenida = document.getElementById("loginForm");
+        formBienvenida.addEventListener("submit", event => {
+            event.preventDefault();
+
+            let nombreUsuario = document.getElementById("nombre").value;
+
+            if(nombreUsuario.length > 0) {
+                sessionStorage.setItem("nombreUsuario", nombreUsuario); // Guardamos el nombre de usuario
+                window.location.href = "Productos.html"; // Hacemos la redireccion
+            }
+        });
+    </script>
+</body>
+</html>
